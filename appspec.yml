@@ -1,0 +1,10 @@
+version: 0.0
+os: windows
+files:
+  - source: C:\MyCicdApplication\AwsConsolerepo\PipelineTesting
+    destination: C:\inetpub\wwwroot\myapi
+hooks:
+  ApplicationStart:
+    - location: scripts/before-install.bat
+      timeout: 300
+      runas: Administrator
