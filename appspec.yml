@@ -2,7 +2,7 @@ version: 0.0
 os: windows
 files:
   - source: C:\MyCicdApplication\AwsConsolerepo\PipelineTesting
-    destination: C:\inetpub\wwwroot\myapi
+    destination: /var/www/html/
 hooks:
   ApplicationStart:
     - location: scripts/before-install.bat
