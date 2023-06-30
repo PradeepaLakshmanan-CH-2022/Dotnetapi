@@ -1,10 +1,16 @@
 version: 0.0
 os: windows
 files:
-  - source: /index.html
-    destination: /var/www/html/
+  - source: /
+    destination: C:\MyCicdApplication
+
 hooks:
-  ApplicationStart:
-    - location: scripts/before-install.bat
+  BeforeInstall:
+    - location: scripts\install-dotnet-core.ps1
+      timeout: 300
+      runas: Administrator
+
+  AfterInstall:
+    - location: scripts\start-service.ps1
       timeout: 300
       runas: Administrator
